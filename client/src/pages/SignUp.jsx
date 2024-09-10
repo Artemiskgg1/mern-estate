@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function SignUp() {
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null); // Initialize error state
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
