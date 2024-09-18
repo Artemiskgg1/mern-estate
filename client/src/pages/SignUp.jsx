@@ -81,6 +81,6 @@ function SignUp() {
       {error && <p className="text-red-500 mt-3">{error}</p>}
     </div>
   );
-}
+}   
 
 export default SignUp;
