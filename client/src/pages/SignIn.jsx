@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   signInStart,
   signInFailure,
-  signInFailure,
+  signInSuccess,
 } from "../redux/user/userSlice";
 
 function SignIn() {
