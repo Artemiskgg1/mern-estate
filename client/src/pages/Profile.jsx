@@ -35,7 +35,6 @@ function Profile() {
         console.error("File upload error:", error);
       },
       () => {
-        // Completion callback
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setFormData((prevData) => ({ ...prevData, avatar: downloadURL }));
         });
