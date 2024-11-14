@@ -31,6 +31,7 @@ export default function Profile() {
   const dispatch = useDispatch();
   
 
+  console.log(currentUser);
   // firebase storage
   // allow read;
   // allow write: if
@@ -75,7 +76,7 @@ export default function Profile() {
     e.preventDefault();
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+      const res = await fetch(`/api/user/update/${currentUser.rest._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +99,7 @@ export default function Profile() {
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
-      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+      const res = await fetch(`/api/user/delete/${currentUser.rest._id}`, {
         method: 'DELETE',
       });
       const data = await res.json();
@@ -130,7 +131,7 @@ export default function Profile() {
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
-      const res = await fetch(`/api/user/listings/${currentUser._id}`);
+      const res = await fetch(`/api/user/listings/${currentUser.rest._id}`);
       const data = await res.json();
       if (data.success === false) {
         setShowListingsError(true);
