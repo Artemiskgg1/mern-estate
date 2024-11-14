@@ -30,8 +30,6 @@ export default function Profile() {
   const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
   
-
-  console.log(currentUser);
   // firebase storage
   // allow read;
   // allow write: if
