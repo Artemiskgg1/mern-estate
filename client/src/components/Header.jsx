@@ -14,6 +14,8 @@ export default function Header() {
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
   };
+  console.log(currentUser);
+  const user = currentUser?.rest || currentUser;
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -58,10 +60,10 @@ export default function Header() {
             </li>
           </Link>
           <Link to='/profile'>
-            {currentUser ? (
+            {user ? (
               <img
                 className='rounded-full h-7 w-7 object-cover'
-                src={currentUser.avatar}
+                src={user.avatar}
                 alt='profile'
               />
             ) : (
